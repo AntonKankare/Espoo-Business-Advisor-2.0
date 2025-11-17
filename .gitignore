@@ -1,0 +1,57 @@
+# Node & package managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js build output
+.next/
+.next/cache/
+out/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+.eslintcache
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editors/IDE
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Prisma (SQLite dev DB)
+prisma/dev.db
+prisma/dev.db-journal
+
+# Vercel / deployment
+.vercel/
+
+# Turbo / task caches
+.turbo/
+
+# Temporary files
+tmp/
+temp/
+*.swp
+*.swo
+
+

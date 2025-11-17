@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  @apply h-full scroll-smooth;
+}
+
+body {
+  @apply min-h-screen bg-gradient-to-b from-neutral-50 to-white text-neutral-900 antialiased text-base leading-relaxed;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans",
+    "Noto Naskh Arabic", "Noto Sans Arabic", Tahoma, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+  @apply text-accent hover:text-accent/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded transition-colors;
+}
+
+.app-shell {
+  @apply container py-6 md:py-8;
+}
+
+/* Improve focus styles for interactive elements */
+button, [role="button"] {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+}
+
+/* Selection color for better readability */
+::selection {
+  @apply bg-accent/20 text-accent;
+}
+
+/* Smooth transitions for interactive elements */
+button, input, textarea, select {
+  @apply transition-colors;
+}
+
+/* Hide scrollbar for cleaner look while maintaining functionality */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

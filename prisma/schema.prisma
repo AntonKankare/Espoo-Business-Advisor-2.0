@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// A single pre-advisory session capturing the user's chat and a structured summary.
+model BusinessIdeaSession {
+  id                     String           @id @default(cuid())
+  createdAt              DateTime         @default(now())
+  updatedAt              DateTime         @updatedAt
+
+  // Language info (strings for SQLite portability; enforce values in app logic)
+  uiLanguage             String
+  userLanguage           String?
+
+  // Basic profile
+  userName               String?
+  userEmail              String?
+  experienceLevel        String?
+  stage                  String?
+
+  // Summary fields for advisor
+  whatSell               String?
+  toWhom                 String?
+  how                    String?
+  companyFormSuggestion  String?
+  companyFormReasoning   String?
+  keyQuestionsForAdvisor String?
+  specialTopics          String?
+
+  // Optional raw chat transcript (stored as JSON string for SQLite compatibility)
+  rawTranscript          String?
+
+  // Optional extracted text from uploaded business plan PDF
+  businessPlanText       String?
+
+  // Contact information (nullable in DB, required in UI before summary)
+  firstName              String?
+  lastName               String?
+  email                  String?
+  phone                  String?
+  dateOfBirth            DateTime?
+  municipality           String?
+}
+
+
